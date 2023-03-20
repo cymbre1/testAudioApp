@@ -1,0 +1,8 @@
+{
+  "name": "testAudio",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}
