@@ -20,7 +20,10 @@
     </div>
     <div class="controls">
       <div class="play-container">
-        <div class="toggle-play play">
+        <div class="toggle-play"
+            [ngClass]="{ 'play': audio == null || audio.paused, 'pause': !audio.paused}"
+            (click)="togglePlay()"
+            >
       </div>
       </div>
       <div class="time">

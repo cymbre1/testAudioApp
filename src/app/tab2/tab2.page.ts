@@ -6,11 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  public audio: HTMLAudioElement;
 
   constructor() {
-    const audioPlayer = document.querySelector(".audio-player");
-    const audio = new Audio("https://my.fourminutebiblestudy.com/devotional/63/audio");
 
+    this.audio = new Audio("https://my.fourminutebiblestudy.com/devotional/63/audio");
+    /*
     audio.addEventListener('loadeddata', () => {
       if(audioPlayer)
       {
@@ -80,6 +81,19 @@ export class Tab2Page {
       if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, "0")}`;
       return `${String(hours).padStart(2, "0")}:${minutes}:${String(
         Math.floor(seconds % 60)).padStart(2, "0")}`;
+    }
+    */
+  }
+
+
+  togglePlay() {
+    console.log(this.audio);
+    if(this.audio.paused) {
+      console.log("play");
+      this.audio.play();
+    } else {
+      console.log("pause");
+      this.audio.pause();
     }
   }
 
